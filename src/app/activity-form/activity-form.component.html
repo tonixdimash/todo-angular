@@ -1,0 +1,9 @@
+<h1>Todo-List ADM</h1>
+
+<form >
+    <mat-form-field class="example-full-width">
+        <mat-label>Write here an activity</mat-label>
+        <input matInput placeholder="Ex. Shopping" #itemName>
+    </mat-form-field>
+    <button (click)="taskHandler.addItem(itemName.value)" mat-raised-button color="primary">Add</button>
+</form>

@@ -1,0 +1,9 @@
+<mat-selection-list #list>
+    <mat-list-option *ngFor="let item of taskHandler.getItems()">
+      {{item}}
+    </mat-list-option>
+</mat-selection-list>
+  
+<p>
+  Items selected: {{list.selectedOptions.selected.length}}
+</p>
