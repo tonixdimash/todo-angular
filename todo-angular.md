@@ -6,9 +6,9 @@ Il tuo obiettivo è creare una semplice applicazione Angular per la gestione di 
 
 ## Features
 ok- Mostra un elenco di attività.
-- Permetti all'utente di aggiungere una nuova attività.
-- Permetti all'utente di segnare un'attività come completata.
-- Permetti all'utente di rimuovere un'attività.
+ok- Permetti all'utente di aggiungere una nuova attività.
+ok- Permetti all'utente di segnare un'attività come completata.
+ok- Permetti all'utente di rimuovere un'attività.
 - Aggiungi la funzionalità di filtro per visualizzare solo le attività completate o solo quelle da completare.
 - Implementa un contatore che mostri il numero totale di attività e il numero di attività completate.
 

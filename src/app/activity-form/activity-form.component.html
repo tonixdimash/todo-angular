@@ -1,9 +1,16 @@
 <h1>Todo-List ADM</h1>
 
-<form >
-    <mat-form-field class="example-full-width">
-        <mat-label>Write here an activity</mat-label>
-        <input matInput placeholder="Ex. Shopping" #itemName>
-    </mat-form-field>
-    <button (click)="taskHandler.addItem(itemName.value)" mat-raised-button color="primary">Add</button>
-</form>
+<button class="rounded-full bg-blue-400 px-4 py-2 font-semibold text-md" (click)="onClick()">Add</button>
+<mat-form-field class="example-full-width">
+    <mat-label>Write here an activity</mat-label>
+    <input matInput placeholder="Ex. Shopping" [(ngModel)]="newItem">
+</mat-form-field>
+
+<div>
+    <label>Show:</label>
+    <select [(ngModel)]="filterOption">
+      <option value="all">All</option>
+      <option value="completed">Completed</option>
+      <option value="pending">Pending</option>
+    </select>
+</div>

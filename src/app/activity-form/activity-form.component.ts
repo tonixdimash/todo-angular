@@ -8,6 +8,13 @@ import { TaskHandlerService } from '../task-handler.service';
 })
 export class ActivityFormComponent {
 
-  constructor (public taskHandler:TaskHandlerService) {}
+  newItem:string = ''
+  filterOption: string = 'all';
 
+  constructor (public taskHandler:TaskHandlerService) {}
+  
+  onClick() {
+    this.taskHandler.addItem(this.newItem)
+    this.newItem = ''
+  }
 }

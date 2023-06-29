@@ -6,17 +6,51 @@ import { Injectable } from '@angular/core';
 export class TaskHandlerService {
 
   // Da qui prendo i dati salvati in precedenza provenienti ad esempio da un database; in questo caso carico dei dati di default
-  items: string[] = ['Jogging','Pay the bills'];
+
+  items = [
+    {
+      name: "Jogging",
+      completed: false,
+      extra: {}
+    },
+    {
+      name: 'Bills',
+      completed: true,
+      extra: {}
+    }
+  ]
 
   constructor() { }
 
-  addItem(name: string) {
-    this.items.push(name)
-    console.log(this.items)
+
+  addItem(itemName: string) {
+    this.items.push({
+      name: itemName,
+      completed: false,
+      extra: {}
+    })
   }
 
   getItems() {
     return this.items
+  }
+
+
+  removeItem(item: any) {
+    const index = this.items.indexOf(item);
+    if (index !== -1) {
+      this.items.splice(index, 1);
+    }
+  }
+
+  getFilteredItems(filterOption: string) {
+    if (filterOption === 'completed') {
+      return this.items.filter(item => item.completed);
+    } else if (filterOption === 'pending') {
+      return this.items.filter(item => !item.completed);
+    } else {
+      return this.items;
+    }
   }
 
 }
