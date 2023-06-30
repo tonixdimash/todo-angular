@@ -1,12 +1,3 @@
-<!-- <div>
-  <label>Show:</label>
-  <select [(ngModel)]="filterOption">
-    <option value="all">All</option>
-    <option value="completed">Completed</option>
-    <option value="pending">Pending</option>
-  </select>
-</div> -->
-
 <mat-form-field>
   <mat-label>Show</mat-label>
   <mat-select [(ngModel)]="filterOption">
@@ -21,9 +12,10 @@
 </div>
 
 <ul>
-  <li *ngFor="let item of taskHandler.getFilteredItems(filterOption)">
+  <li *ngFor="let item of taskHandler.getFilteredItems(filterOption); index as i;">
     <input type="checkbox" [(ngModel)]="item.completed">
     <span>{{ item.name }}</span>
-    <button (click)="taskHandler.removeItem(item)"><span class="material-icons">chevron_right</span></button>
+    <button (click)="taskHandler.removeItem(item)"><mat-icon class="text-2xl text-zinc-600" fontIcon="delete"></mat-icon></button>
+    <button (click)="modItem(i)"><mat-icon class="text-2xl text-zinc-600" fontIcon="chevron_right"></mat-icon></button>
   </li>
 </ul>

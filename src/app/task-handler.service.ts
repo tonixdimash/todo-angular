@@ -67,4 +67,8 @@ export class TaskHandlerService {
     }
   }
 
+  getItemByIndex(index: number) {
+    return this.items[index]
+  }
+
 }

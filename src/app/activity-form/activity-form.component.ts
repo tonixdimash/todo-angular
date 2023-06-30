@@ -17,5 +17,4 @@ export class ActivityFormComponent {
     this.newItem = ''
   }
 
-
 }

@@ -12,4 +12,9 @@ export class ActivityListComponent {
 
   constructor (public taskHandler:TaskHandlerService) {}
 
+  modItem(index: number) {
+    const data = this.taskHandler.getItemByIndex(index)
+    console.log(data)
+  }
+
 }
