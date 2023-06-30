@@ -9,6 +9,9 @@ import { ActivityFormComponent } from './activity-form/activity-form.component';
 import { ActivityListComponent } from './activity-list/activity-list.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+
 
 @NgModule({
   declarations: [
@@ -22,7 +25,9 @@ import { MatListModule } from '@angular/material/list';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatInputModule,
-    MatListModule
+    MatListModule,
+    MatFormFieldModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

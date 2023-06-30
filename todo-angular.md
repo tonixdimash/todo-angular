@@ -9,15 +9,15 @@ ok- Mostra un elenco di attività.
 ok- Permetti all'utente di aggiungere una nuova attività.
 ok- Permetti all'utente di segnare un'attività come completata.
 ok- Permetti all'utente di rimuovere un'attività.
-- Aggiungi la funzionalità di filtro per visualizzare solo le attività completate o solo quelle da completare.
-- Implementa un contatore che mostri il numero totale di attività e il numero di attività completate.
+ok- Aggiungi la funzionalità di filtro per visualizzare solo le attività completate o solo quelle da completare.
+ok- Implementa un contatore che mostri il numero totale di attività e il numero di attività completate.
 
 ## Linee guida
 ok- Utilizza Angular CLI per creare un nuovo progetto.
 ok- Utilizza componenti separati per l'elenco delle attività e il form per aggiungere nuove attività.
-- Utilizza un servizio per gestire la logica delle attività, ad esempio il recupero, l'aggiunta, la rimozione e il conteggio.
-- Utilizza il two-way data binding per mantenere sincronizzati i dati tra il componente dell'elenco delle attività e il form di aggiunta.
-- Utilizza il ngIf o il ngFor per mostrare o nascondere gli elementi in base alle condizioni.
+ok- Utilizza un servizio per gestire la logica delle attività, ad esempio il recupero, l'aggiunta, la rimozione e il conteggio.
+ok- Utilizza il two-way data binding per mantenere sincronizzati i dati tra il componente dell'elenco delle attività e il form di aggiunta.
+ok- Utilizza il ngIf o il ngFor per mostrare o nascondere gli elementi in base alle condizioni.
 
 ## Bonus (opzionale):
 - Aggiungi la funzionalità di modifica di un'attività esistente.

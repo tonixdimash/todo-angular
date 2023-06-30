@@ -53,4 +53,18 @@ export class TaskHandlerService {
     }
   }
 
+  getTotalCounter() {
+    return this.items.length
+  }
+
+  getCounter(filterOption: string) {
+    if (filterOption === 'completed') {
+      return this.items.filter(item => item.completed).length;
+    } else if (filterOption === 'pending') {
+      return this.items.filter(item => !item.completed).length;
+    } else {
+      return this.items.length;
+    }
+  }
+
 }

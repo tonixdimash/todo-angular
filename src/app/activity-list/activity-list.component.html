@@ -1,47 +1,29 @@
-<!-- <mat-selection-list #list>
-    <mat-list-option *ngFor="let item of taskHandler.getItems()">
-      {{item}}
-    </mat-list-option>
-</mat-selection-list>
-  
-<p>
-  Items selected: {{list.selectedOptions.selected.length}}
-</p> -->
+<!-- <div>
+  <label>Show:</label>
+  <select [(ngModel)]="filterOption">
+    <option value="all">All</option>
+    <option value="completed">Completed</option>
+    <option value="pending">Pending</option>
+  </select>
+</div> -->
 
+<mat-form-field>
+  <mat-label>Show</mat-label>
+  <mat-select [(ngModel)]="filterOption">
+    <mat-option value="all">All</mat-option>
+    <mat-option value="completed">Completed</mat-option>
+    <mat-option value="pending">Pending</mat-option>
+  </mat-select>
+</mat-form-field>
 
-
-
-<!-- <mat-list role="list">
-  <mat-list-item role="listitem" *ngFor="let item of taskHandler.getItems()">
-    {{item}}
-  </mat-list-item>
-</mat-list> -->
-
-
+<div>
+  <p>Items found: {{ taskHandler.getCounter(filterOption) }}</p>
+</div>
 
 <ul>
-  <li *ngFor="let item of taskHandler.getItems()">
-    <input type="checkbox" [ngModel]="item.completed">
+  <li *ngFor="let item of taskHandler.getFilteredItems(filterOption)">
+    <input type="checkbox" [(ngModel)]="item.completed">
     <span>{{ item.name }}</span>
     <button (click)="taskHandler.removeItem(item)"><span class="material-icons">chevron_right</span></button>
   </li>
 </ul>
-
-
-<!-- <ul>
-  <li *ngFor="let item of taskHandler.getItems2()">
-    <input type="checkbox" value={{ item.completed }}>
-    <span>{{ item.name }}</span>
-    <button (click)="taskHandler.removeItem(item)">Remove</button>
-  </li>
-</ul> -->
-
-<!-- <mat-list role="list">
-  <mat-list-option *ngFor="let item of taskHandler.getItems()">
-    <span class="text-black">{{ item.name }}</span>
-  </mat-list-option>
-
-  <input type="checkbox" value={{ item.completed }}>
-  <span>{{ item.name }}</span>
-  <button (click)="taskHandler.removeItem(item)">Remove</button>
-</mat-list> -->

@@ -9,12 +9,13 @@ import { TaskHandlerService } from '../task-handler.service';
 export class ActivityFormComponent {
 
   newItem:string = ''
-  filterOption: string = 'all';
 
   constructor (public taskHandler:TaskHandlerService) {}
   
-  onClick() {
+  addEvent() {
     this.taskHandler.addItem(this.newItem)
     this.newItem = ''
   }
+
+
 }

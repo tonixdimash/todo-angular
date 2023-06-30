@@ -1,12 +1,12 @@
 <h1>Todo-List ADM</h1>
 
-<button class="rounded-full bg-blue-400 px-4 py-2 font-semibold text-md" (click)="onClick()">Add</button>
+<button class="rounded-full bg-blue-400 px-4 py-2 font-semibold text-md" (click)="addEvent()">Add</button>
 <mat-form-field class="example-full-width">
     <mat-label>Write here an activity</mat-label>
     <input matInput placeholder="Ex. Shopping" [(ngModel)]="newItem">
 </mat-form-field>
 
-<div>
+<!-- <div>
     <label>Show:</label>
     <select [(ngModel)]="filterOption">
       <option value="all">All</option>
@@ -14,3 +14,4 @@
       <option value="pending">Pending</option>
     </select>
 </div>
+<button class="rounded-full bg-red-400 px-4 py-2 font-semibold text-md" (click)="newFilter()">Search</button> -->

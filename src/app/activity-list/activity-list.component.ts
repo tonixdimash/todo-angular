@@ -8,6 +8,8 @@ import { TaskHandlerService } from '../task-handler.service';
 })
 export class ActivityListComponent {
 
+  filterOption: string = 'all';
+
   constructor (public taskHandler:TaskHandlerService) {}
-  
+
 }
