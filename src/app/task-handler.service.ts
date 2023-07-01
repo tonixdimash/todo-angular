@@ -8,11 +8,13 @@ export class TaskHandlerService {
   // Da qui prendo i dati salvati in precedenza provenienti ad esempio da un database; in questo caso carico dei dati di default
   items = [
     {
+      id: 1688247673013,
       name: "Jogging",
       completed: false,
       extra: {}
     },
     {
+      id: 1688247687119,
       name: 'Bills',
       completed: true,
       extra: {}
@@ -26,6 +28,7 @@ export class TaskHandlerService {
 
   addItem(itemName: string) {
     this.items.push({
+      id: new Date().getTime(),
       name: itemName,
       completed: false,
       extra: {}
@@ -37,8 +40,9 @@ export class TaskHandlerService {
   }
 
 
-  removeItem(item: any) {
-    const index = this.items.indexOf(item);
+  removeItem(itemId: number) {
+    const index = this.items.findIndex(item => item.id === itemId);
+
     if (index !== -1) {
       this.items.splice(index, 1);
     }
@@ -72,8 +76,8 @@ export class TaskHandlerService {
     return this.items[this.indexSelectedItem]
   }
 
-  setIndexItem(index: number) {
-    this.indexSelectedItem = index
+  setIndexItem(itemId: number) {
+    this.indexSelectedItem = this.items.findIndex(item => item.id === itemId)
   }
 
   replaceItem(newName: string, newStatus: boolean) {

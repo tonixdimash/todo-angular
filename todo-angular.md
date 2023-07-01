@@ -20,7 +20,7 @@ ok- Utilizza il two-way data binding per mantenere sincronizzati i dati tra il c
 ok- Utilizza il ngIf o il ngFor per mostrare o nascondere gli elementi in base alle condizioni.
 
 ## Bonus (opzionale):
-- Aggiungi la funzionalità di modifica di un'attività esistente.
+ok- Aggiungi la funzionalità di modifica di un'attività esistente.
 - Implementa un'interfaccia utente accattivante utilizzando CSS o un framework di stile come Bootstrap o Angular Material.
 - Utilizza il routing per creare una pagina di dettaglio per ciascuna attività, con la possibilità di modificare i dettagli dell'attività.
 
@@ -28,6 +28,10 @@ ok- Utilizza il ngIf o il ngFor per mostrare o nascondere gli elementi in base a
 Lo scopo di questo test è capire come ragioni, come approcci e risolvi problemi e, ovviamente, il tuo lato creativo. Sorprendici!
 
 ## Check finali (ADM):
+- gestire tutti gli altri dati rimanenti
+- gestione dei dati dettaglio a blocco (e non nome per nome)
+- sistemare grafica
+- implementazione routing
 - Lingua inglese ovunque
 - Commenti (ita)
 - Saper spiegare il funzionamento usando le corrette terminologie

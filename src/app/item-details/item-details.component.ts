@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, DoCheck } from '@angular/core';
 import { TaskHandlerService } from '../task-handler.service';
 
 @Component({
@@ -6,22 +6,29 @@ import { TaskHandlerService } from '../task-handler.service';
   templateUrl: './item-details.component.html',
   styleUrls: ['./item-details.component.css']
 })
-export class ItemDetailsComponent {
+export class ItemDetailsComponent implements DoCheck {
 
   constructor (public taskHandler:TaskHandlerService) { }
 
+  currentIndex = -1
   newName = ''
   newStatus = false
 
 
+  
+  ngDoCheck(): void {
+    if (this.currentIndex !== this.taskHandler.indexSelectedItem) {
+      this.currentIndex = this.taskHandler.indexSelectedItem
+      if (this.currentIndex !== -1) {
+      this.updateItem()
+      }
+    }
+  }
 
-  // ngDoCheck(): void {
-  //   if (this.taskHandler.indexSelectedItem !== -1 && !this.firstExec) {
-  //     this.newName = this.taskHandler.getSelectedItem().name
-
-  //     this.firstExec = true
-  //   }
-  // }
+  updateItem() {
+    this.newName = this.taskHandler.getSelectedItem().name
+    this.newStatus = this.taskHandler.getSelectedItem().completed
+  }
 
   saveItem() {
     this.taskHandler.replaceItem(this.newName, this.newStatus)
