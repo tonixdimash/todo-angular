@@ -12,7 +12,7 @@ export class ActivityFormComponent {
 
   constructor (public taskHandler:TaskHandlerService) {}
   
-  addEvent() {
+  addItem() {
     this.taskHandler.addItem(this.newItem)
     this.newItem = ''
   }

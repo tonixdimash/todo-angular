@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { TaskHandlerService } from '../task-handler.service';
 
 @Component({
@@ -11,10 +11,5 @@ export class ActivityListComponent {
   filterOption: string = 'all';
 
   constructor (public taskHandler:TaskHandlerService) {}
-
-  modItem(index: number) {
-    const data = this.taskHandler.getItemByIndex(index)
-    console.log(data)
-  }
 
 }

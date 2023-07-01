@@ -1,18 +1,30 @@
-<div class="flex flex-col">
-<mat-form-field>
-  <mat-label>Activity Name</mat-label>
-    <input matInput>
-  </mat-form-field>
-  <mat-slide-toggle>Slide me!</mat-slide-toggle>
-  <mat-form-field>
-    <mat-label>Priority</mat-label>
-    <mat-select>
-      <mat-option value="high">High</mat-option>
-      <mat-option value="low">Low</mat-option>
-    </mat-select>
-  </mat-form-field>
-  <mat-form-field>
-    <mat-label>Notes</mat-label>
-    <textarea matInput></textarea>
-</mat-form-field>
+<!-- <div *ngIf="taskHandler.getSelectedItem().name !== ''" class="flex flex-col"> -->
+<div *ngIf="taskHandler.indexSelectedItem !== -1" class="flex flex-col">
+    <mat-form-field>
+      <mat-label>Activity Name</mat-label>
+      <!-- <input matInput [value]="taskHandler.getSelectedItem().name" [(ngModel)]="newName"> -->
+      <!-- <input matInput [(ngModel)]="taskHandler.getSelectedItem().name"> -->
+      <input matInput [value]="taskHandler.getSelectedItem().name" [(ngModel)]="newName">
+    </mat-form-field>
+    <section>
+        <!-- <mat-checkbox [checked]="taskHandler.getSelectedItem().completed" [(ngModel)]="newStatus">Completed</mat-checkbox> -->
+        <mat-checkbox [(ngModel)]="taskHandler.getSelectedItem().completed">Completed</mat-checkbox>
+    </section>
+    <mat-form-field>
+        <mat-label>Q.tà</mat-label>
+        <input matInput placeholder="Ex. 2">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Priority</mat-label>
+        <mat-select>
+            <mat-option value="high">High</mat-option>
+            <mat-option value="low">Low</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Notes</mat-label>
+        <textarea matInput></textarea>
+    </mat-form-field>
+    <button mat-raised-button color="warn" (click)="saveItem()">Save</button>
+    <button mat-raised-button (click)="keepItem()">Cancel</button>
 </div>

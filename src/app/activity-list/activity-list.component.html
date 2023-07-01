@@ -16,6 +16,6 @@
     <input type="checkbox" [(ngModel)]="item.completed">
     <span>{{ item.name }}</span>
     <button (click)="taskHandler.removeItem(item)"><mat-icon class="text-2xl text-zinc-600" fontIcon="delete"></mat-icon></button>
-    <button (click)="modItem(i)"><mat-icon class="text-2xl text-zinc-600" fontIcon="chevron_right"></mat-icon></button>
+    <button (click)="this.taskHandler.setIndexItem(i)"><mat-icon class="text-2xl text-zinc-600" fontIcon="chevron_right"></mat-icon></button>
   </li>
 </ul>

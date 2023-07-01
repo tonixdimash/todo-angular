@@ -6,7 +6,6 @@ import { Injectable } from '@angular/core';
 export class TaskHandlerService {
 
   // Da qui prendo i dati salvati in precedenza provenienti ad esempio da un database; in questo caso carico dei dati di default
-
   items = [
     {
       name: "Jogging",
@@ -19,6 +18,8 @@ export class TaskHandlerService {
       extra: {}
     }
   ]
+
+  indexSelectedItem = -1
 
   constructor() { }
 
@@ -67,8 +68,17 @@ export class TaskHandlerService {
     }
   }
 
-  getItemByIndex(index: number) {
-    return this.items[index]
+  getSelectedItem() {
+    return this.items[this.indexSelectedItem]
+  }
+
+  setIndexItem(index: number) {
+    this.indexSelectedItem = index
+  }
+
+  replaceItem(newName: string, newStatus: boolean) {
+    this.items[this.indexSelectedItem].name = newName;
+    this.items[this.indexSelectedItem].completed = newStatus;
   }
 
 }
