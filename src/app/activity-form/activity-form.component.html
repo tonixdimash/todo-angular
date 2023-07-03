@@ -1,7 +1,17 @@
 <div class="flex flex-row relative mx-4">
+
+  <!-- Campo inserimento attività -->
   <mat-form-field class="w-full">
       <mat-label>Write here an activity</mat-label>
-      <input matInput class="border-2 border-sky-600" placeholder="Ex. Shopping" [(ngModel)]="newItem" (keydown.enter)="addItem()" >
+      <input matInput
+        class="border-2 border-sky-600"
+        placeholder="Ex. Shopping"
+        [(ngModel)]="newItem" (keydown.enter)="taskHandler.addItem(newItem)" > <!-- Inserimento valore premendo tasto Invio -->
   </mat-form-field>
-  <button (click)="addItem()"><mat-icon class="text-sky-600 m-4 w-full absolute top-0 right-0" fontIcon="add_box"></mat-icon></button>
+
+  <!-- Inserimento valore premendo bottone con icona "+" -->
+  <button (click)="taskHandler.addItem(newItem)">
+    <mat-icon class="text-sky-600 m-4 w-full absolute top-0 right-0" fontIcon="add_box"></mat-icon>
+  </button>
+
 </div>

@@ -7,14 +7,9 @@ import { TaskHandlerService } from '../task-handler.service';
   styleUrls: ['./activity-form.component.css']
 })
 export class ActivityFormComponent {
-
+  
   newItem:string = ''
 
   constructor (public taskHandler:TaskHandlerService) {}
-  
-  addItem() {
-    this.taskHandler.addItem(this.newItem)
-    this.newItem = ''
-  }
 
 }
