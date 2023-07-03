@@ -1,17 +1,7 @@
-<h1>Todo-List ADM</h1>
-
-<button class="rounded-full bg-blue-400 px-4 py-2 font-semibold text-md" (click)="addItem()">Add</button>
-<mat-form-field class="example-full-width">
-    <mat-label>Write here an activity</mat-label>
-    <input matInput placeholder="Ex. Shopping" [(ngModel)]="newItem">
-</mat-form-field>
-
-<!-- <div>
-    <label>Show:</label>
-    <select [(ngModel)]="filterOption">
-      <option value="all">All</option>
-      <option value="completed">Completed</option>
-      <option value="pending">Pending</option>
-    </select>
+<div class="flex flex-row relative mx-4">
+  <mat-form-field class="w-full">
+      <mat-label>Write here an activity</mat-label>
+      <input matInput class="border-2 border-sky-600" placeholder="Ex. Shopping" [(ngModel)]="newItem" (keydown.enter)="addItem()" >
+  </mat-form-field>
+  <button (click)="addItem()"><mat-icon class="text-sky-600 m-4 w-full absolute top-0 right-0" fontIcon="add_box"></mat-icon></button>
 </div>
-<button class="rounded-full bg-red-400 px-4 py-2 font-semibold text-md" (click)="newFilter()">Search</button> -->

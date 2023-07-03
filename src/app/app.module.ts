@@ -17,7 +17,8 @@ import { ItemDetailsComponent } from './item-details/item-details.component';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatButtonModule } from '@angular/material/button';
-
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,9 @@ import { MatButtonModule } from '@angular/material/button';
     MatDialogModule,
     MatSlideToggleModule,
     MatCheckboxModule,
-    MatButtonModule
+    MatButtonModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [],
   bootstrap: [AppComponent]

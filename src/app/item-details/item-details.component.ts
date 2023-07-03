@@ -13,9 +13,12 @@ export class ItemDetailsComponent implements DoCheck {
   currentIndex = -1
   newName = ''
   newStatus = false
+  newQta = 0
+  newPriority = 'low'
+  newDate = ''
+  newNotes = ''
 
 
-  
   ngDoCheck(): void {
     if (this.currentIndex !== this.taskHandler.indexSelectedItem) {
       this.currentIndex = this.taskHandler.indexSelectedItem
@@ -28,10 +31,14 @@ export class ItemDetailsComponent implements DoCheck {
   updateItem() {
     this.newName = this.taskHandler.getSelectedItem().name
     this.newStatus = this.taskHandler.getSelectedItem().completed
+    this.newQta = this.taskHandler.getSelectedItem().extra.qta
+    this.newPriority = this.taskHandler.getSelectedItem().extra.priority
+    this.newDate = this.taskHandler.getSelectedItem().extra.date
+    this.newNotes = this.taskHandler.getSelectedItem().extra.notes
   }
 
   saveItem() {
-    this.taskHandler.replaceItem(this.newName, this.newStatus)
+    this.taskHandler.replaceItem(this.newName, this.newStatus, this.newQta, this.newDate, this.newPriority, this.newNotes)
     this.taskHandler.setIndexItem(-1)
   }
 

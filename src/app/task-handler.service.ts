@@ -11,13 +11,23 @@ export class TaskHandlerService {
       id: 1688247673013,
       name: "Jogging",
       completed: false,
-      extra: {}
+      extra: {
+        qta: 0,
+        priority: 'low',
+        date: '',
+        notes: 'with my friend, schedule a day'
+      }
     },
     {
       id: 1688247687119,
       name: 'Bills',
-      completed: true,
-      extra: {}
+      completed: false,
+      extra: {
+        qta: 2,
+        priority: 'high',
+        date: '',
+        notes: 'urgent!!!'
+      }
     }
   ]
 
@@ -31,7 +41,12 @@ export class TaskHandlerService {
       id: new Date().getTime(),
       name: itemName,
       completed: false,
-      extra: {}
+      extra: {
+        qta: 0,
+        priority: 'low',
+        date: '',
+        notes: ''
+      }
     })
   }
 
@@ -80,9 +95,21 @@ export class TaskHandlerService {
     this.indexSelectedItem = this.items.findIndex(item => item.id === itemId)
   }
 
-  replaceItem(newName: string, newStatus: boolean) {
+  getIndexItem() {
+    return this.indexSelectedItem
+  }
+
+  replaceItem(newName: string, newStatus: boolean, newQta: number, newDate: string, newPriority: string, newNotes: string) {
     this.items[this.indexSelectedItem].name = newName;
     this.items[this.indexSelectedItem].completed = newStatus;
+    this.items[this.indexSelectedItem].extra.qta = newQta;
+    this.items[this.indexSelectedItem].extra.date = newDate;
+    this.items[this.indexSelectedItem].extra.priority = newPriority;
+    this.items[this.indexSelectedItem].extra.notes = newNotes;
+  }
+
+  updateStatus(itemId:number, newStatus: boolean) {
+    this.items[this.items.findIndex(item => item.id === itemId)].completed = newStatus;
   }
 
 }
