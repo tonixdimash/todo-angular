@@ -12,4 +12,10 @@ export class ActivityFormComponent {
 
   constructor (public taskHandler:TaskHandlerService) {}
 
+  checkEmptyField() {
+    if (this.newItem.trim() !== '') {
+      this.taskHandler.addItem(this.newItem)
+    }
+  }
+
 }

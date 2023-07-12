@@ -1,4 +1,4 @@
-<div class="flex flex-row relative mx-4">
+<div class="flex flex-row relative mx-4" *ngIf="taskHandler.getIndexItem() === -1" >
 
   <!-- Campo inserimento attività -->
   <mat-form-field class="w-full">
@@ -6,12 +6,12 @@
       <input matInput
         class="border-2 border-sky-600"
         placeholder="Ex. Shopping"
-        [(ngModel)]="newItem" (keydown.enter)="taskHandler.addItem(newItem)" > <!-- Inserimento valore premendo tasto Invio -->
+        [(ngModel)]="newItem" (keydown.enter)="checkEmptyField()" > <!-- Inserimento valore premendo tasto Invio -->
   </mat-form-field>
 
   <!-- Inserimento valore premendo bottone con icona "+" -->
-  <button (click)="taskHandler.addItem(newItem)">
-    <mat-icon class="text-sky-600 m-4 w-full absolute top-0 right-0" fontIcon="add_box"></mat-icon>
+  <button [disabled]="newItem.trim() === ''" (click)="taskHandler.addItem(newItem)">
+    <mat-icon class="text-sky-600 m-4 w-full absolute top-0 right-0" [class.text-gray-600]="newItem.trim() === ''" fontIcon="add_box"></mat-icon>
   </button>
 
 </div>

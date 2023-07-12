@@ -1,4 +1,4 @@
-<div class="flex flex-row mx-4 justify-between">
+<div class="flex flex-row mx-4 justify-between" *ngIf="taskHandler.getIndexItem() === -1">
 
   <!-- Selettore filtro per ricerca -->
   <mat-form-field class="w-2/3">
@@ -22,7 +22,8 @@
   [class.pointer-events-none]="taskHandler.getIndexItem() !== -1"
   [class.bg-gray-600]="taskHandler.getIndexItem() !== -1"
   [class.pointer-events-auto]="taskHandler.getIndexItem() === -1"
-  [class.bg-sky-700]="taskHandler.getIndexItem() === -1">
+  [class.bg-sky-700]="taskHandler.getIndexItem() === -1"
+  *ngIf="taskHandler.getCounter(filterOption) !== 0 && taskHandler.getIndexItem() === -1">
   <li 
     *ngFor="let item of taskHandler.getFilteredItems(filterOption); index as i;"
     class="flex w-full items-center bg-sky-600 m-1 p-2 rounded-md hover:cursor-pointer"
